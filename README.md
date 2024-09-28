@@ -1,5 +1,5 @@
 # EM-Net
-The code for "EM-Net: Efficient Channel and Frequency Learning with Mamba for 3D Medical Image Segmentation" (MICCAI 2024)
+The code for "EM-Net: Efficient Channel and Frequency Learning with Mamba for 3D Medical Image Segmentation" [Arxiv](https://arxiv.org/abs/2409.17675) | MICCAI 2024
 
 ## 🚧 Under Construction 🚧
 
