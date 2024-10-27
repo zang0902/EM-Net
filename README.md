@@ -77,22 +77,22 @@ sh utils/test_synapse.sh
 
 ## Overview
 
-[Framework](./assets/framework.png "The EM-Net framework")
-[Motivation](./assets/motivation.png "The EM-Net layers motivation")
+![Framework](./assets/framework.png "The EM-Net framework")
+![Motivation](./assets/motivation.png "The EM-Net layers motivation")
 Our proposed framework, including two different blocks—the CSRM block and CSRM-F block—is designed to extract the spatial relationships in channel view and combine channel and frequency modeling capabilities. The motivation is that Mamba excels in capturing long sequence information, and frequency information is more suitable for capturing spatial relationships.
 
-[Method](./assets/layer.png "The EM-Net layer architecture")
+![Method](./assets/layer.png "The EM-Net layer architecture")
 
 - CSRM Layer:
   Calibrates and highlights relevant regional features.
 - EFL Layer:
   Learns global and local features by leveraging the frequency domain.
 
-[Results](./assets/result.png "The EM-Net visualization results")
+![Results](./assets/result.png "The EM-Net visualization results")
 EM-Net not only performs well in the segmentation of large organs but also shows more significant improvements in the segmentation of small organs.
-[Results](./assets/comparison.png "The EM-Net quantitative results")
+![Results](./assets/comparison.png "The EM-Net quantitative results")
 
-[Results](./assets/ablation.png "The EM-Net ablation study results")
+![Results](./assets/ablation.png "The EM-Net ablation study results")
 Due to the high efficiency of the EM-Net framework, it is able to achieve a high level of accuracy with a relatively small number of parameters, which is particularly advantageous for resource-constrained applications.
 
 ## Acknowledgment
