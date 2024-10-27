@@ -1,0 +1,3 @@
+# model
+model_name: vtunet
+feature_size: 16

@@ -1,0 +1,16 @@
+# Template trainer
+
+# training settings
+batch_size: 4
+max_epochs: 100000
+optim_name: sgd
+optim_lr: 0.01
+reg_weight: 0.00003
+val_every: 100
+lrschedule: warmup_cosine
+warmup_epochs: 10
+seed: 3487
+iter_per_epoch: 250
+train_by_iter: True
+deep_supervision: False
+save_checkpoint: True

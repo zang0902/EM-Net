@@ -1,0 +1,7 @@
+# model
+model_name: unet
+feat_size: 
+  - 48
+  - 96
+  - 192
+  - 384

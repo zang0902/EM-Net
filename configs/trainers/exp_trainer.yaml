@@ -1,0 +1,23 @@
+# 用来测试各种情况
+
+# training settings
+batch_size: 1
+max_epochs: 1000
+optim_name: sgd
+optim_lr: 0.1
+reg_weight: 0.00003
+val_every: 1
+lrschedule: warmup_cosine
+warmup_epochs: 10
+seed: 3487
+# seed: 42
+iter_per_epoch: 250
+train_by_iter: True
+deep_supervision: False
+save_checkpoint: True
+exp_mode: True  # Activate to debug memory, trian speed, inference speed 
+# noamp: True
+
+# Dataloader setting
+crop_nums: 1
+logdir: Temp_exp

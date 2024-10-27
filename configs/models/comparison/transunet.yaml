@@ -1,0 +1,3 @@
+# model
+model_name: transunet
+feature_size: 16

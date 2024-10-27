@@ -1,0 +1,12 @@
+dataset_name: btcv
+data_dir: /data1/chuyhu/SegMamba/data/BTCV
+
+crop_nums: 4
+in_channels: 1
+out_channels: 14
+space_x: 1.5
+space_y: 1.5
+space_z: 2.0
+roi_x: 96 
+roi_y: 96 
+roi_z: 96 

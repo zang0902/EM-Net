@@ -1,0 +1,3 @@
+# model
+model_name: unetr
+feature_size: 16

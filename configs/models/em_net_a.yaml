@@ -1,0 +1,20 @@
+# model
+model_name: em-net
+hidden_size: 384
+feature_size: 
+  - 48
+  - 96
+  - 192
+  - 384
+depths:
+  - 3
+  - 3
+  - 3
+  - 3
+fft_nums:
+  - 0
+  - 0
+  - 0
+  - 0
+conv_decoder: False
+variant: a
