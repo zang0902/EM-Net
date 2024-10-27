@@ -105,6 +105,7 @@ We sincerely acknowledge the following projects that provided valuable insights 
 - https://github.com/state-spaces/mamba
 - https://github.com/Project-MONAI/MONAI
 - https://github.com/Amshaker/unetr_plus_plus/
+- https://github.com/MrYxJ/calculate-flops.pytorch
 
 ## Citation
 
