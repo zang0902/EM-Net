@@ -109,7 +109,7 @@ We sincerely acknowledge the following projects that provided valuable insights 
 
 ## Citation
 
-If you build upon or extend our work, please cite our article:
+If you find this work helpful for your research, we would appreciate it if you cite our paper:
 
 ```bibtex
 @inproceedings{chang2024net,
