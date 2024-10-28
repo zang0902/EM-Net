@@ -1,6 +1,8 @@
 # EM-Net
 
-The official code for "EM-Net: Efficient Channel and Frequency Learning with Mamba for 3D Medical Image Segmentation" [Arxiv](https://arxiv.org/abs/2409.17675) | [MICCAI 2024](https://papers.miccai.org/miccai-2024/paper/1923_paper.pdf)
+The official code for "EM-Net: Efficient Channel and Frequency Learning with Mamba for 3D Medical Image Segmentation" ![GitHub Repo stars](https://img.shields.io/github/stars/zang0902/EM-Net) [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fzang0902%2FEM-Net&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com) 
+
+Our paper is available at [arXiv](https://arxiv.org/abs/2409.17675) or [MICCAI 2024](https://papers.miccai.org/miccai-2024/paper/1923_paper.pdf).
 
 This is an efficient 3D medical image segmentation method that balances high spatial modeling performance with moderate computational costs. Well-designed channel and spatial Mamba blocks (CSRM blocks) and efficient frequency and spatial learning Mamba blocks (CSRM-F blocks) contribute to this framework (i.e., EM-Net).
 
@@ -128,6 +130,11 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact Us
 
-For any questions or suggestions, please contact im [dot] jiajun [dot] zeng [at] gmail [dot] com or submit an issue on GitHub.
+For any questions or suggestions, please contact us at:
+
+- 2200241009 [at] email [dot] szu [dot] edu [dot] cn
+- im [dot] jiajun [dot] zeng [at] gmail [dot] com
+
+Or submit an issue on GitHub.
 
 If you find this project useful, please give it a star!
