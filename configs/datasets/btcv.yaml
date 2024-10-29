@@ -1,5 +1,5 @@
 dataset_name: btcv
-data_dir: /data1/chuyhu/SegMamba/data/BTCV
+data_dir: /pathto/data/BTCV
 
 crop_nums: 4
 in_channels: 1

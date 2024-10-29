@@ -1,5 +1,5 @@
 dataset_name: flare
-data_dir: /data1/chuyhu/SegMamba/data/FLARE2022
+data_dir: /pathto/data/FLARE2022
 
 crop_nums: 4
 in_channels: 1

@@ -1,5 +1,5 @@
 dataset_name: msd_spleen
-data_dir: /data1/chuyhu/SegMamba/data/Dataset009_Spleen
+data_dir: /pathto/data/Dataset009_Spleen
 
 crop_nums: 4
 in_channels: 1
