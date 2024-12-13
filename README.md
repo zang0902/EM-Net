@@ -28,7 +28,7 @@ nvcc -V  # Should return CUDA version 11.8
 
 ```bash
 # Install PyTorch with CUDA 11.8
-conda install pytorch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 pytorch-cuda=11.8 -c pytorch -c nvidia
+pip install torch==2.1.1 torchvision==0.16.1 torchaudio==2.1.1 --index-url https://download.pytorch.org/whl/cu118
 
 # Install dependencies
 pip install -r requirements.txt
@@ -72,9 +72,9 @@ It's easy to train and test using the provided scripts and configurations.
 
 ```bash
 # Example command to run the script
-sh utils/train_synapse.sh
+sh scripts/train_synapse.sh
 # or
-sh utils/test_synapse.sh
+sh scripts/test_synapse.sh
 ```
 
 ## Overview

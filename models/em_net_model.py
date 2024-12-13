@@ -90,8 +90,8 @@ class MambaLayer(nn.Module):
             x_flat = x_flat + self.pos_embed    
         x_norm = self.norm(x_flat)
         x_mamba = self.norm1(self.mamba(x_norm))
-        x_spatial = self.norm2(self.mlp(x_norm.transpose(-1, -2).reshape(B, C, *img_dims)).reshape(B, C, n_tokens).transpose(-1, -2))
-        
+        x_spatial = self.norm2(self.mamba(self.mlp(x_norm.transpose(-1, -2).reshape(B, C, *img_dims)).reshape(B, C, n_tokens).transpose(-1, -2)))
+
         out = x_flat + self.gamma * (x_mamba + x_spatial)
         out = out.transpose(-1, -2).reshape(B, C, *img_dims)
 
