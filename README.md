@@ -39,7 +39,7 @@ python setup.py install
 
 # Install mamba
 cd ../mamba
-python setup.py install
+pip install -e .
 ```
 
 ## Usage
