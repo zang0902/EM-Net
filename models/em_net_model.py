@@ -53,7 +53,7 @@ class LayerNorm(nn.Module):
             return x
 
 class MambaLayer(nn.Module):
-    def __init__(self, dim, stage=1, d_state = 16, d_conv = 4, expand = 2, pos_embed=True, input_shpae=[128, 128, 128]):
+    def __init__(self, dim, stage=1, d_state = 16, d_conv = 4, expand = 2, pos_embed=True, in_shape=[128, 128, 128]):
         super().__init__()
         self.dim = dim
         self.norm = nn.LayerNorm(dim)
@@ -66,9 +66,9 @@ class MambaLayer(nn.Module):
                 expand=expand,    # Block expansion factor
                 bimamba_type="v2",
         )
-        x = input_shpae[0] // 2**(stage+1)
-        y = input_shpae[1] // 2**(stage+1)
-        z = input_shpae[2] // 2**(stage+1)
+        x = in_shape[0] // 2**(stage+1)
+        y = in_shape[1] // 2**(stage+1)
+        z = in_shape[2] // 2**(stage+1)
         if pos_embed:
             self.pos_embed = nn.Parameter(torch.zeros(1, x*y*z, self.dim))  # Temp n*n*n/2
 
@@ -221,7 +221,7 @@ class EMNetUpBlock(nn.Module):
             for i in range(3):
                 stage_blocks.append(MambaLayer(dim=out_channels, stage=stage-1, 
                                                d_state=16, d_conv=4, expand=2, 
-                                               pos_embed=True, input_shpae=in_shape))
+                                               pos_embed=True, in_shape=in_shape))
             self.decoder_block.append(nn.Sequential(*stage_blocks))
         else:
             conv_block = UnetBasicBlock(  # type: ignore
@@ -434,7 +434,7 @@ class MambaEncoder(nn.Module):
             stage = nn.Sequential(
                 *[Spectral_Layer(dim=self.dims[i], stage=i+1, in_shape=in_shape) 
                   if j<self.fft_nums[i]
-                  else MambaLayer(dim=self.dims[i], stage=i+1, input_shpae=in_shape) 
+                  else MambaLayer(dim=self.dims[i], stage=i+1, in_shape=in_shape) 
                   for j in range(self.depths[i])]
             )
             self.stages.append(stage)
@@ -512,7 +512,7 @@ class EMNet_Bot(nn.Module):
             norm_name=norm_name,
             res_block=res_block,
         )
-        self.encoder_hidden = MambaLayer(dim=self.hidden_size, stage=4, input_shpae=in_shpae) 
+        self.encoder_hidden = MambaLayer(dim=self.hidden_size, stage=4, in_shape=in_shpae) 
         self.use_conv = conv_decoder
         if self.use_conv:
             self.decoder4 = UnetrUpBlock(
@@ -662,7 +662,7 @@ class MambaEncoder_Bot(nn.Module):
             stage = nn.Sequential(
                 *[Spectral_Layer(dim=self.dims[i], stage=i+1, in_shape=in_shape) 
                   if j<self.fft_nums[i]
-                  else MambaLayer(dim=self.dims[i], stage=i+1, input_shpae=in_shape) 
+                  else MambaLayer(dim=self.dims[i], stage=i+1, in_shape=in_shape) 
                   for j in range(self.depths[i])]
             )
             self.stages.append(stage)
@@ -888,7 +888,7 @@ class MambaEncoder_Conv_Enc(nn.Module):
             stage = nn.Sequential(
                 *[Spectral_Layer(dim=self.dims[i], stage=i+1, in_shape=in_shape) 
                   if j<self.fft_nums[i]
-                  else MambaLayer_Conv(dim=self.dims[i], stage=i+1, input_shpae=in_shape) 
+                  else MambaLayer_Conv(dim=self.dims[i], stage=i+1, in_shape=in_shape) 
                   for j in range(self.depths[i])]
             )
             self.stages.append(stage)
@@ -922,7 +922,7 @@ class MambaEncoder_Conv_Enc(nn.Module):
         return x
 
 class MambaLayer_Conv(nn.Module):
-    def __init__(self, dim, stage=1, d_state = 16, d_conv = 4, expand = 2, pos_embed=True, input_shpae=[128, 128, 128]):
+    def __init__(self, dim, stage=1, d_state = 16, d_conv = 4, expand = 2, pos_embed=True, in_shape=[128, 128, 128]):
         super().__init__()
         self.dim = dim
         self.norm = nn.LayerNorm(dim)
@@ -935,9 +935,9 @@ class MambaLayer_Conv(nn.Module):
                 expand=expand,    # Block expansion factor
                 bimamba_type="v2",
         )
-        x = input_shpae[0] // 2**(stage+1)
-        y = input_shpae[1] // 2**(stage+1)
-        z = input_shpae[2] // 2**(stage+1)
+        x = in_shape[0] // 2**(stage+1)
+        y = in_shape[1] // 2**(stage+1)
+        z = in_shape[2] // 2**(stage+1)
         if pos_embed:
             self.pos_embed = nn.Parameter(torch.zeros(1, x*y*z, self.dim))  # Temp n*n*n/2
 
